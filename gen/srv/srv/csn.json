@@ -90,10 +90,31 @@
     },
     "hydmetro": {
       "@source": "srv/Hydmetro.cds",
-      "kind": "service"
+      "kind": "service",
+      "@requires": "authenticated-user"
     },
     "hydmetro.train": {
       "kind": "entity",
+      "@restrict": [
+        {
+          "grant": [
+            "READ"
+          ],
+          "to": "HydmetroRead"
+        },
+        {
+          "grant": [
+            "WRITE"
+          ],
+          "to": "HydmetroWrite"
+        },
+        {
+          "grant": [
+            "DELETE"
+          ],
+          "to": "HydmetroDelete"
+        }
+      ],
       "@odata.draft.enabled": true,
       "@UI.LineItem": [
         {

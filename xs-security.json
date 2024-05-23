@@ -1,8 +1,16 @@
 {
   "scopes": [
     {
-      "name": "$XSAPPNAME.HydmetroAdmin",
-      "description": "HydmetroAdmin"
+      "name": "$XSAPPNAME.HydmetroWrite",
+      "description": "Hydmetro Create/Update"
+    },
+    {
+      "name": "$XSAPPNAME.HydmetroRead",
+      "description": "Hydmetro Read"
+    },
+    {
+      "name": "$XSAPPNAME.HydmetroDelete",
+      "description": "Hydmetro Delete"
     }
   ],
   "attributes": [],
@@ -11,7 +19,16 @@
       "name": "HydmetroAdmin",
       "description": "Role for Administration of Hydmetro",
       "scope-references": [
-        "$XSAPPNAME.HydmetroAdmin"
+        "$XSAPPNAME.HydmetroWrite",
+        "$XSAPPNAME.HydmetroRead",
+        "$XSAPPNAME.HydmetroDelete"
+      ]
+    },
+    {
+      "name": "HydmetroRead",
+      "description": "Role for Reading of Hydmetro",
+      "scope-references": [
+        "$XSAPPNAME.HydmetroRead"
       ]
     }
   ],
